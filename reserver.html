@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réserver – Therapēa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="reserver.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar navbar--fixed">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo blanc.png" alt="Therapēa" style="height:42px;" />
+      </a>
+      <nav class="navbar__links">
+        <a href="index.html">HOME</a>
+        <a href="notre-histoire.html">NOTRE HISTOIRE</a>
+        <a href="ateliers.html">LES ATELIERS</a>
+        <a href="#">PROFESSIONNELS</a>
+        <a href="reserver.html" class="btn-nav active">RÉSERVER</a>
+      </nav>
+      <button class="navbar__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO RÉSERVER -->
+  <section class="reserver-hero">
+    <div class="reserver-hero__overlay"></div>
+    <div class="reserver-hero__content">
+      <h1>Réserver un atelier</h1>
+      <p>Choisissez votre atelier et venez vous ressourcer au travers de la créativité végétale</p>
+    </div>
+    <div class="reserver-hero__wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#f5f0e8"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section class="reserver-form-section">
+    <div class="reserver-layout">
+
+      <!-- INFOS -->
+      <div class="reserver-info">
+        <h2>Informations pratiques</h2>
+        <div class="info-block">
+          <span class="info-icon">📍</span>
+          <div>
+            <strong>Lieu</strong>
+            <p>Ateliers en présentiel, en institution ou à domicile selon la formule choisie.</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="info-icon">⏱</span>
+          <div>
+            <strong>Durée</strong>
+            <p>Entre 1h30 et 3h selon l'atelier</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="info-icon">👥</span>
+          <div>
+            <strong>Groupes</strong>
+            <p>Ateliers individuels ou en groupe (jusqu'à 12 personnes)</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="info-icon">🌿</span>
+          <div>
+            <strong>Matériel</strong>
+            <p>Tout le matériel végétal est fourni, rien à apporter</p>
+          </div>
+        </div>
+
+        <div class="ateliers-list">
+          <h3>Nos ateliers</h3>
+          <ul>
+            <li>Portrait Chinois</li>
+            <li>Autoportrait Floral</li>
+            <li>Couronne de Fleurs</li>
+            <li>Jardin d'Intérieur</li>
+            <li>Couleurs, Textures, Émotions</li>
+            <li>Réaliser son Arbre de Vie</li>
+            <li>Composition Florale</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="reserver-form">
+        <h2>Votre demande</h2>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" />
+          </div>
+
+          <div class="form-group">
+            <label for="atelier">Atelier souhaité *</label>
+            <select id="atelier" name="atelier" required>
+              <option value="" disabled selected>Choisissez un atelier</option>
+              <option>Portrait Chinois</option>
+              <option>Autoportrait Floral</option>
+              <option>Couronne de Fleurs</option>
+              <option>Jardin d'Intérieur</option>
+              <option>Couleurs, Textures, Émotions et Significations</option>
+              <option>Réaliser son Arbre de Vie</option>
+              <option>Composition Florale</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date souhaitée</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label for="participants">Nombre de participants</label>
+              <select id="participants" name="participants">
+                <option>1 personne</option>
+                <option>2 personnes</option>
+                <option>3 à 5 personnes</option>
+                <option>6 à 10 personnes</option>
+                <option>Plus de 10 personnes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Partagez-nous vos envies, contraintes ou questions..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Envoyer ma demande</button>
+        </form>
+        <div class="form-success" id="form-success">
+          <span>🌿</span>
+          <p>Merci pour votre message ! Nous reviendrons vers vous très rapidement.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#2e5339"/>
+      </svg>
+    </div>
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <img src="images/logo blanc.png" alt="Therapēa" style="height:60px;" />
+        <p class="footer__tagline">ateliers de créativité végétale</p>
+      </div>
+      <p class="footer__copy">© 2024 Therapēa – Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.reserver-form form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>

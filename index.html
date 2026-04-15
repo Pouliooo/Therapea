@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapēa – Ateliers de créativité végétale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────── NAVBAR ───────── -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo">
+        <img src="images/logo.png" alt="Therapēa" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <span class="navbar__logo-text">THERAPĒA</span>
+      </a>
+      <nav class="navbar__links">
+        <a href="index.html">HOME</a>
+        <a href="notre-histoire.html">NOTRE HISTOIRE</a>
+        <a href="ateliers.html">LES ATELIERS</a>
+        <a href="#">PROFESSIONNELS</a>
+        <a href="reserver.html" class="btn-nav">RÉSERVER</a>
+      </nav>
+      <button class="navbar__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <img src="images/logo blanc.png" alt="Therapēa – ateliers de créativité végétale" />
+      </div>
+      <h1 class="hero__title">Faites de votre créativité<br />une thérapie</h1>
+      <p class="hero__sub">Révélez-vous au travers d'une activité manuelle</p>
+    </div>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#2e5339"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ───────── ATELIERS – SECTION VERTE ───────── -->
+  <section class="ateliers-green">
+    <div class="container">
+      <div class="cards-row">
+
+        <article class="card-circle">
+          <div class="card-circle__img-wrap">
+            <img src="images/img1.jpg" alt="Portrait Chinois" />
+          </div>
+          <h3>PORTRAIT CHINOIS</h3>
+          <p>Réalisez avec les végétaux et accessoires à disposition une composition qui prend en compte les éléments du portrait chinois (couleur, forme, texture, odeur...).</p>
+          <a href="/ateliers/portrait-chinois" class="link-discover">Découvrir →</a>
+        </article>
+
+        <article class="card-circle">
+          <div class="card-circle__img-wrap">
+            <img src="images/img2.jpg" alt="Couronne de Fleurs" />
+          </div>
+          <h3>COURONNE DE FLEURS</h3>
+          <p>Balade dans la nature et cueillette pour confectionner une couronne de saison 100% naturelle.</p>
+          <a href="/ateliers/couronne-de-fleurs" class="link-discover">Découvrir →</a>
+        </article>
+
+        <article class="card-circle">
+          <div class="card-circle__img-wrap">
+            <img src="images/img3.jpg" alt="Jardin d'Intérieur" />
+          </div>
+          <h3>JARDIN D'INTÉRIEUR</h3>
+          <p>Créer son jardin d'intérieur en se mettant au contact de la terre, en prenant le temps de ressentir les textures et en faisant place à sa créativité.</p>
+          <a href="/ateliers/jardin-interieur" class="link-discover">Découvrir →</a>
+        </article>
+
+      </div>
+    </div>
+    <div class="green-wave-bottom">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C360,0 1080,120 1440,60 L1440,120 L0,120 Z" fill="#f5f0e8"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ───────── ATELIERS – SECTION CRÈME ───────── -->
+  <section class="ateliers-cream">
+    <div class="container">
+      <div class="ateliers-cream__header">
+        <span class="section-eyebrow">Ce que nous proposons</span>
+        <h2>Tous nos ateliers</h2>
+      </div>
+      <div class="cards-grid">
+
+        <article class="card-workshop">
+          <div class="card-workshop__img-wrap">
+            <img src="images/autoportrait-floral.jpg" alt="Autoportrait Floral"
+                 onerror="this.src='https://picsum.photos/seed/floral4/400/500'" />
+          </div>
+          <h3>AUTOPORTRAIT FLORAL</h3>
+          <p>Travail introspectif consistant à créer un bouquet qui reflète vos propres éléments personnels significatifs selon les fleurs, leurs couleurs et significations.</p>
+          <a href="/ateliers/autoportrait-floral" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop">
+          <div class="card-workshop__img-wrap">
+            <img src="images/arbre-vie.jpg" alt="Embellir son Arbre de Vie"
+                 onerror="this.src='https://picsum.photos/seed/tree5/400/500'" />
+          </div>
+          <h3>EMBELLIR SON ARBRE DE VIE</h3>
+          <p>Esquisser et construire l'arbre de vie en utilisant les matériaux botaniques disponibles pour créer quelque chose de significatif.</p>
+          <a href="/ateliers/arbre-de-vie" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop">
+          <div class="card-workshop__img-wrap">
+            <img src="images/couleurs-textures.jpg" alt="Couleurs, Textures, Émotions et Significations"
+                 onerror="this.src='https://picsum.photos/seed/colors6/400/500'" />
+          </div>
+          <h3>COULEURS, TEXTURES, ÉMOTIONS ET SIGNIFICATIONS</h3>
+          <p>Apprendre la signification des fleurs et des couleurs, puis créer un bouquet intentionnel selon les fleurs, leurs couleurs et significations.</p>
+          <a href="/ateliers/couleurs-textures" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop">
+          <div class="card-workshop__img-wrap">
+            <img src="images/composition-florale.jpg" alt="Composition Florale"
+                 onerror="this.src='https://picsum.photos/seed/compose7/400/500'" />
+          </div>
+          <h3>COMPOSITION FLORALE</h3>
+          <p>Composition florale libre à partir de fleurs de saison pour créer une composition artistique qui vous ressemble.</p>
+          <a href="/ateliers/composition-florale" class="link-discover dark">Découvrir →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-sep wave-cream-to-green">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#2e5339"/>
+    </svg>
+  </div>
+
+  <!-- ───────── CTA ───────── -->
+  <section class="cta-section">
+    <div class="cta-section__inner">
+      <span class="cta-eyebrow">Envie de vous reconnecter ?</span>
+      <h2>Venez vivre l'expérience Therapēa</h2>
+      <a href="reserver.html" class="btn-cta">Réserver un atelier</a>
+    </div>
+  </section>
+
+  <div class="wave-sep wave-green-to-cream">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#f5f0e8"/>
+    </svg>
+  </div>
+
+  <!-- ───────── À PROPOS TEASER ───────── -->
+  <section class="apropos-wrap">
+  <div class="apropos">
+    <div class="apropos__img">
+      <img src="images/home.jpg" alt="Therapēa" />
+    </div>
+    <div class="apropos__text">
+      <span class="section-eyebrow">Notre histoire</span>
+      <blockquote class="apropos__quote">« La botanique et la créativité comme chemin vers soi. »</blockquote>
+      <p>Formée en psychologie et passionnée de botanique, j'ai créé Therapēa pour offrir un espace où la nature devient médium d'expression et de reconnexion à soi.</p>
+      <a href="notre-histoire.html" class="btn-text">Découvrir mon parcours →</a>
+    </div>
+  </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="footer__wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#2e5339"/>
+      </svg>
+    </div>
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <img src="images/logo-white.png" alt="Therapēa"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+        <span class="footer__logo-text">THERAPĒA</span>
+        <p class="footer__tagline">ateliers de créativité végétale</p>
+      </div>
+      <p class="footer__copy">© 2024 Therapēa – Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
