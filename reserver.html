@@ -63,7 +63,7 @@
           <span class="info-icon">⏱</span>
           <div>
             <strong>Durée</strong>
-            <p>Entre 1h30 et 3h selon l'atelier</p>
+            <p>2h</p>
           </div>
         </div>
         <div class="info-block">
@@ -140,15 +140,36 @@
               <input type="date" id="date" name="date" />
             </div>
             <div class="form-group">
-              <label for="participants">Nombre de participants</label>
-              <select id="participants" name="participants">
-                <option>1 personne</option>
-                <option>2 personnes</option>
-                <option>3 à 5 personnes</option>
-                <option>6 à 10 personnes</option>
-                <option>Plus de 10 personnes</option>
-              </select>
+              <label>Durée</label>
+              <input type="text" value="2h" readonly class="input-readonly" />
             </div>
+          </div>
+
+          <div class="form-group">
+            <label>Type de séance *</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="seance" id="seance-privee" value="privee" checked />
+                <span class="radio-box">
+                  <span class="radio-icon">🔒</span>
+                  <span class="radio-label">Privée</span>
+                  <span class="radio-sub">1 personne</span>
+                </span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="seance" id="seance-groupe" value="groupe" />
+                <span class="radio-box">
+                  <span class="radio-icon">👥</span>
+                  <span class="radio-label">Groupe</span>
+                  <span class="radio-sub">2 à 8 personnes</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="groupe-field" style="display:none;">
+            <label for="nb-participants">Nombre de participants *</label>
+            <input type="number" id="nb-participants" name="nb-participants" min="2" max="8" placeholder="Entre 2 et 8" />
           </div>
 
           <div class="form-group">

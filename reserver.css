@@ -237,6 +237,64 @@
   line-height: 1.6;
 }
 
+/* ── INPUT READONLY ── */
+.input-readonly {
+  background: var(--cream-dark) !important;
+  color: #888 !important;
+  cursor: default;
+}
+
+/* ── RADIO SÉANCE ── */
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.radio-option {
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.2rem 1rem;
+  border: 1.5px solid #d4cec7;
+  border-radius: 4px;
+  background: #fff;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
+
+.radio-option input:checked + .radio-box {
+  border-color: var(--green-dark);
+  background: rgba(46,83,57,0.05);
+}
+
+.radio-icon { font-size: 1.3rem; }
+
+.radio-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--green-dark);
+  letter-spacing: 0.06em;
+}
+
+.radio-sub {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 300;
+}
+
 /* ── ACTIVE NAV ── */
 .navbar__links a.active,
 .btn-nav.active {

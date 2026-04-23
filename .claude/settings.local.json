@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:therapeiaa.fr)"
+      "WebFetch(domain:therapeiaa.fr)",
+      "Bash(sed -i 's|<h1 class=\"atelier-hero__title\">Bouquet<br />des Couleurs</h1>|<h1 class=\"atelier-hero__title\">Bouquet des Couleurs</h1>|' \"d:/therapeia/atelier-bouquet-couleurs.html\")",
+      "Bash(sed -i 's|<h1 class=\"atelier-hero__title\">Autoportrait<br />Floral</h1>|<h1 class=\"atelier-hero__title\">Autoportrait Floral</h1>|' \"d:/therapeia/atelier-autoportrait-floral.html\")",
+      "Bash(sed -i 's|<h1 class=\"atelier-hero__title\">Portrait Chinois<br />Végétal</h1>|<h1 class=\"atelier-hero__title\">Portrait Chinois Végétal</h1>|' \"d:/therapeia/atelier-portrait-chinois.html\")",
+      "Bash(sed -i \"s|<h1 class=\\\\\"atelier-hero__title\\\\\">Jardin<br />d'Intérieur</h1>|<h1 class=\\\\\"atelier-hero__title\\\\\">Jardin d'Intérieur</h1>|\" \"d:/therapeia/atelier-jardin-interieur.html\")",
+      "Bash(sed -i 's|<h1 class=\"atelier-hero__title\">Couronne de<br />Fleurs Séchées</h1>|<h1 class=\"atelier-hero__title\">Couronne de Fleurs Séchées</h1>|' \"d:/therapeia/atelier-couronne-fleurs.html\")"
     ]
   }
 }

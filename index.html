@@ -14,9 +14,8 @@
   <!-- ───────── NAVBAR ───────── -->
   <header class="navbar">
     <div class="navbar__inner">
-      <a href="/" class="navbar__logo">
-        <img src="images/logo.png" alt="Therapēa" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-        <span class="navbar__logo-text">THERAPĒA</span>
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo blanc.png" alt="Therapēa" style="height:42px;" />
       </a>
       <nav class="navbar__links">
         <a href="index.html">HOME</a>
@@ -51,7 +50,7 @@
   <!-- ───────── ATELIERS – SECTION VERTE ───────── -->
   <section class="ateliers-green">
     <div class="container">
-      <div class="cards-row">
+      <div class="cards-row animate">
 
         <article class="card-circle">
           <div class="card-circle__img-wrap">
@@ -92,50 +91,58 @@
   <!-- ───────── ATELIERS – SECTION CRÈME ───────── -->
   <section class="ateliers-cream">
     <div class="container">
-      <div class="ateliers-cream__header">
+      <div class="ateliers-cream__header animate">
         <span class="section-eyebrow">Ce que nous proposons</span>
         <h2>Tous nos ateliers</h2>
       </div>
       <div class="cards-grid">
 
-        <article class="card-workshop">
-          <div class="card-workshop__img-wrap">
-            <img src="images/autoportrait-floral.jpg" alt="Autoportrait Floral"
-                 onerror="this.src='https://picsum.photos/seed/floral4/400/500'" />
-          </div>
+        <article class="card-workshop animate">
+          <a href="atelier-portrait-chinois.html">
+            <div class="card-workshop__img-wrap">
+              <img src="images/img1.jpg" alt="Portrait Chinois Végétal"
+                   onerror="this.src='https://picsum.photos/id/152/400/500'" />
+            </div>
+          </a>
+          <h3>PORTRAIT CHINOIS VÉGÉTAL</h3>
+          <p>Une composition végétale qui vous ressemble — couleurs, formes, textures, odeurs.</p>
+          <a href="atelier-portrait-chinois.html" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop animate animate--delay-1">
+          <a href="atelier-arbre-de-vie.html">
+            <div class="card-workshop__img-wrap">
+              <img src="images/img2.jpg" alt="Arbre de Vie"
+                   onerror="this.src='https://picsum.photos/id/219/400/500'" />
+            </div>
+          </a>
+          <h3>ARBRE DE VIE</h3>
+          <p>Construire avec les végétaux le récit visuel et symbolique de qui vous êtes.</p>
+          <a href="atelier-arbre-de-vie.html" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop animate animate--delay-2">
+          <a href="atelier-bouquet-couleurs.html">
+            <div class="card-workshop__img-wrap">
+              <img src="images/img3.jpg" alt="Bouquet des Couleurs"
+                   onerror="this.src='https://picsum.photos/id/292/400/500'" />
+            </div>
+          </a>
+          <h3>BOUQUET DES COULEURS</h3>
+          <p>Explorer les significations des fleurs et des couleurs pour créer un bouquet intentionnel.</p>
+          <a href="atelier-bouquet-couleurs.html" class="link-discover dark">Découvrir →</a>
+        </article>
+
+        <article class="card-workshop animate animate--delay-3">
+          <a href="atelier-autoportrait-floral.html">
+            <div class="card-workshop__img-wrap">
+              <img src="images/fond.jpg" alt="Autoportrait Floral"
+                   onerror="this.src='https://picsum.photos/id/164/400/500'" />
+            </div>
+          </a>
           <h3>AUTOPORTRAIT FLORAL</h3>
-          <p>Travail introspectif consistant à créer un bouquet qui reflète vos propres éléments personnels significatifs selon les fleurs, leurs couleurs et significations.</p>
-          <a href="/ateliers/autoportrait-floral" class="link-discover dark">Découvrir →</a>
-        </article>
-
-        <article class="card-workshop">
-          <div class="card-workshop__img-wrap">
-            <img src="images/arbre-vie.jpg" alt="Embellir son Arbre de Vie"
-                 onerror="this.src='https://picsum.photos/seed/tree5/400/500'" />
-          </div>
-          <h3>EMBELLIR SON ARBRE DE VIE</h3>
-          <p>Esquisser et construire l'arbre de vie en utilisant les matériaux botaniques disponibles pour créer quelque chose de significatif.</p>
-          <a href="/ateliers/arbre-de-vie" class="link-discover dark">Découvrir →</a>
-        </article>
-
-        <article class="card-workshop">
-          <div class="card-workshop__img-wrap">
-            <img src="images/couleurs-textures.jpg" alt="Couleurs, Textures, Émotions et Significations"
-                 onerror="this.src='https://picsum.photos/seed/colors6/400/500'" />
-          </div>
-          <h3>COULEURS, TEXTURES, ÉMOTIONS ET SIGNIFICATIONS</h3>
-          <p>Apprendre la signification des fleurs et des couleurs, puis créer un bouquet intentionnel selon les fleurs, leurs couleurs et significations.</p>
-          <a href="/ateliers/couleurs-textures" class="link-discover dark">Découvrir →</a>
-        </article>
-
-        <article class="card-workshop">
-          <div class="card-workshop__img-wrap">
-            <img src="images/composition-florale.jpg" alt="Composition Florale"
-                 onerror="this.src='https://picsum.photos/seed/compose7/400/500'" />
-          </div>
-          <h3>COMPOSITION FLORALE</h3>
-          <p>Composition florale libre à partir de fleurs de saison pour créer une composition artistique qui vous ressemble.</p>
-          <a href="/ateliers/composition-florale" class="link-discover dark">Découvrir →</a>
+          <p>Un bouquet miroir de vous-même, créé à partir d'un travail introspectif guidé.</p>
+          <a href="atelier-autoportrait-floral.html" class="link-discover dark">Découvrir →</a>
         </article>
 
       </div>
@@ -150,7 +157,7 @@
 
   <!-- ───────── CTA ───────── -->
   <section class="cta-section">
-    <div class="cta-section__inner">
+    <div class="cta-section__inner animate">
       <span class="cta-eyebrow">Envie de vous reconnecter ?</span>
       <h2>Venez vivre l'expérience Therapēa</h2>
       <a href="reserver.html" class="btn-cta">Réserver un atelier</a>
@@ -165,7 +172,7 @@
 
   <!-- ───────── À PROPOS TEASER ───────── -->
   <section class="apropos-wrap">
-  <div class="apropos">
+  <div class="apropos animate">
     <div class="apropos__img">
       <img src="images/home.jpg" alt="Therapēa" />
     </div>
@@ -187,9 +194,7 @@
     </div>
     <div class="footer__inner">
       <div class="footer__logo">
-        <img src="images/logo-white.png" alt="Therapēa"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-        <span class="footer__logo-text">THERAPĒA</span>
+        <img src="images/logo blanc.png" alt="Therapēa" style="height:60px;" />
         <p class="footer__tagline">ateliers de créativité végétale</p>
       </div>
       <p class="footer__copy">© 2024 Therapēa – Tous droits réservés</p>

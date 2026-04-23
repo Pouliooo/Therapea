@@ -1,15 +1,20 @@
 /* ── PRÉSENTATION ── */
 .presentation {
+  background: var(--cream);
+  margin-top: 72px;
+  padding: 5rem 5%;
+}
+
+.presentation__inner {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
-  height: 55vh;
-  margin-top: 72px;
-  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  align-items: center;
 }
 
 .presentation__text {
-  background: var(--cream);
-  padding: 3.5rem 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,25 +23,15 @@
 
 .presentation__img {
   overflow: hidden;
-  position: relative;
-}
-
-.presentation__img::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: 0;
-  width: 30%;
-  background: linear-gradient(to right, var(--cream), transparent);
-  z-index: 1;
-  pointer-events: none;
+  border-radius: 4px;
+  aspect-ratio: 4 / 5;
 }
 
 .presentation__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 20%;
 }
 
 .presentation__text h2 {
@@ -256,8 +251,8 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .presentation { grid-template-columns: 1fr; }
-  .presentation__img { height: 50vw; }
+  .presentation__inner { grid-template-columns: 1fr; }
+  .presentation__img { aspect-ratio: 4 / 3; }
   .realisations__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
