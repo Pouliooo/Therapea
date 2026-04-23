@@ -20,8 +20,9 @@
 
 .page-hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   color: #fff;
+  padding-bottom: 1.5rem;
 }
 
 .page-hero__content h1 {
@@ -75,9 +76,13 @@
 .ateliers-intro__body p:last-child { margin-bottom: 0; }
 
 @media (max-width: 700px) {
-  .ateliers-intro__grid { grid-template-columns: 1fr; gap: 2rem; }
-  .ateliers-intro__heading h2 { font-size: 1.6rem; }
+  .ateliers-intro { padding: 3rem 0 2.5rem; }
+  .ateliers-intro__heading h2 {
+    font-size: 1.6rem;
+    white-space: normal;
+  }
 }
+
 
 /* ── SECTIONS ── */
 .ateliers-section {
@@ -270,9 +275,19 @@
   }
   .atelier-row--reverse .atelier-row__img { order: 0; }
   .atelier-row--reverse .atelier-row__body { order: 0; }
-  .atelier-row__img { aspect-ratio: 16 / 9; height: auto; }
+  .atelier-row__img { aspect-ratio: 16 / 9; height: auto; max-height: none; }
   .atelier-row__body { padding: 2.5rem 2rem; }
   .atelier-row__body p { max-width: 100%; }
+  .atelier-row__num { font-size: 3.5rem; }
+  .atelier-row__body h3 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .ateliers-section { padding: 3rem 0 4rem; }
+  .atelier-row__body { padding: 2rem 1.5rem; }
+  .atelier-row__body h3 { font-size: 1.7rem; }
+  .atelier-row__num { font-size: 3rem; }
+  .page-hero__content h1 { font-size: 1.5rem; }
 }
 
 /* ── ACTIVE NAV LINK ── */

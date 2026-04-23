@@ -188,12 +188,23 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .atelier-content__inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
+  .atelier-content__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .atelier-meta { position: static; }
   .atelier-gallery { grid-template-columns: repeat(2, 1fr); }
+  .atelier-content { padding: 4rem 5%; }
+}
+
+@media (max-width: 600px) {
+  .atelier-hero { padding: 3rem 5% 4.5rem; }
+  .atelier-hero__title { white-space: normal; font-size: 2rem; }
+  .atelier-content { padding: 3rem 5%; }
+  .atelier-content__text h2 { font-size: 1.5rem; }
+  .atelier-gallery-section { padding: 3rem 5% 4rem; }
+  .atelier-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .atelier-gallery { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 500px) {

@@ -9,7 +9,16 @@ if (navbar) {
 // ── BURGER MENU ──
 const burger = document.querySelector('.navbar__burger');
 const navLinks = document.querySelector('.navbar__links');
-burger?.addEventListener('click', () => navLinks.classList.toggle('open'));
+burger?.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+navLinks?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+  });
+});
 
 // ── PAGE TRANSITIONS ──
 document.body.style.opacity = '0';
