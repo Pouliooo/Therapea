@@ -1,7 +1,7 @@
 /* ── HEADER ── */
 .atelier-hero {
   background: var(--green-dark);
-  margin-top: 72px;
+  margin-top: 92px;
   padding: 4rem 5% 5.5rem;
   position: relative;
   overflow: hidden;
@@ -194,19 +194,28 @@
   .atelier-content { padding: 4rem 5%; }
 }
 
+@media (max-width: 768px) {
+  .atelier-hero__title { white-space: normal; }
+}
+
 @media (max-width: 600px) {
   .atelier-hero { padding: 3rem 5% 4.5rem; }
-  .atelier-hero__title { white-space: normal; font-size: 2rem; }
+  .atelier-hero__title { font-size: 2rem; }
   .atelier-content { padding: 3rem 5%; }
   .atelier-content__text h2 { font-size: 1.5rem; }
+  .atelier-content__text p { font-size: 0.95rem; }
   .atelier-gallery-section { padding: 3rem 5% 4rem; }
   .atelier-gallery { grid-template-columns: repeat(2, 1fr); }
+  .atelier-meta { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+  .atelier-hero { padding: 2.5rem 5% 4rem; }
+  .atelier-gallery { grid-template-columns: repeat(2, 1fr); }
+  .atelier-hero__content { padding-bottom: 2.5rem; }
+}
+
+@media (max-width: 380px) {
   .atelier-gallery { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 500px) {
-  .atelier-hero__content { padding-bottom: 3rem; }
+  .atelier-meta { grid-template-columns: 1fr; }
 }

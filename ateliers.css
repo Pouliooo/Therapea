@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 72px;
+  margin-top: 92px;
 }
 
 .page-hero__overlay {
@@ -75,7 +75,7 @@
 
 .ateliers-intro__body p:last-child { margin-bottom: 0; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .ateliers-intro { padding: 3rem 0 2.5rem; }
   .ateliers-intro__heading h2 {
     font-size: 1.6rem;
@@ -302,7 +302,8 @@
   .workshops-grid--3 { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .workshops-grid { grid-template-columns: 1fr; }
   .workshops-grid--3 { grid-template-columns: 1fr; }
+  .page-hero { min-height: 140px; }
 }

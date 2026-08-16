@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'Herbe Folle – Association de jardinage en Alsace du Nord</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      color: #3a2e1e;
+      background: #f7f3ec;
+      min-height: 100vh;
+    }
+    a { color: #5a7a2e; text-decoration: none; }
+    a:hover { text-decoration: underline; color: #3d5a1a; }
+    img { max-width: 100%; }
+
+    /* ── Wrapper ── */
+    .wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 18px rgba(0,0,0,.12);
+    }
+
+    /* ── Header ── */
+    header {
+      background: #2e5c1a;
+      padding: 18px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 3px solid #a8c87a;
+    }
+    .logo-circle svg { width: 58px; height: 58px; }
+    .site-title h1 {
+      font-size: 2rem;
+      color: #f0e8d0;
+      letter-spacing: .04em;
+      font-style: italic;
+    }
+    .site-title p {
+      color: #c8dfa0;
+      font-size: .9rem;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #4a7c24;
+      position: relative;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav > ul > li {
+      position: relative;
+    }
+    nav > ul > li > a {
+      display: block;
+      padding: 11px 16px;
+      color: #f0f7e8;
+      font-family: Arial, sans-serif;
+      font-size: .82rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
+    }
+    nav > ul > li > a:hover,
+    nav > ul > li.active > a {
+      background: #2e5c1a;
+      text-decoration: none;
+    }
+    /* Dropdown */
+    nav .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #3a6415;
+      min-width: 230px;
+      box-shadow: 2px 4px 12px rgba(0,0,0,.25);
+    }
+    nav > ul > li:hover .dropdown { display: block; }
+    nav .dropdown li a {
+      display: block;
+      padding: 9px 18px;
+      color: #e8f5d0;
+      font-family: Arial, sans-serif;
+      font-size: .8rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      transition: background .15s;
+    }
+    nav .dropdown li a:hover {
+      background: #2e5010;
+      text-decoration: none;
+    }
+
+    /* ── Banner image ── */
+    .banner {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #6a9c3a 0%, #3d6e18 40%, #8bb84a 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px 30px;
+    }
+    .banner::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse 40px 60px at 10% 70%, rgba(255,255,255,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 80px 50px at 80% 40%, rgba(255,255,255,.06) 0%, transparent 60%),
+        radial-gradient(circle 30px at 55% 80%, rgba(255,255,255,.07) 0%, transparent 50%);
+    }
+    /* Decorative flower petals */
+    .banner::after {
+      content: "🌿 🌸 🌹 🌼 🌿";
+      position: absolute;
+      bottom: 10px; right: 20px;
+      font-size: 2rem;
+      opacity: .35;
+      letter-spacing: 4px;
+    }
+    .banner-caption {
+      position: relative;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,.5);
+    }
+    .banner-caption h2 { font-size: 1.5rem; font-style: italic; }
+    .banner-caption p  { font-size: .9rem; margin-top: 4px; color: #d8f0b0; }
+
+    /* ── Layout ── */
+    .page-body {
+      display: flex;
+      gap: 0;
+    }
+    .main-content {
+      flex: 1;
+      padding: 26px 28px;
+      border-right: 1px solid #e0d8cc;
+    }
+    .sidebar {
+      width: 240px;
+      padding: 22px 18px;
+      background: #f9f5ee;
+      flex-shrink: 0;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      font-size: .78rem;
+      color: #888;
+      font-family: Arial, sans-serif;
+      margin-bottom: 18px;
+    }
+    .breadcrumb a { color: #5a7a2e; }
+
+    /* ── Article card ── */
+    .article-card {
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px dashed #c8b898;
+    }
+    .article-card:last-child { border-bottom: none; }
+    .article-card h3 {
+      font-size: 1.15rem;
+      color: #2e5c1a;
+      margin-bottom: 8px;
+    }
+    .article-card .meta {
+      font-size: .75rem;
+      color: #999;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+    .article-card p { line-height: 1.65; color: #4a3c28; }
+    .article-card .thumb {
+      float: right;
+      margin: 0 0 10px 14px;
+      width: 130px; height: 90px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid #c8d8a0;
+    }
+    .thumb-img {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #8cba50, #5a8c20);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .clearfix::after { content: ""; display: table; clear: both; }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 14px;
+      background: #5a7a2e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: .78rem;
+      border-radius: 3px;
+      transition: background .2s;
+    }
+    .read-more:hover { background: #3d5a1a; text-decoration: none; }
+
+    /* ── Sidebar widgets ── */
+    .widget {
+      margin-bottom: 24px;
+    }
+    .widget-title {
+      font-size: .88rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #fff;
+      background: #4a7c24;
+      padding: 7px 12px;
+      border-radius: 3px 3px 0 0;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .widget-body {
+      background: #fff;
+      border: 1px solid #d8ccb8;
+      border-top: none;
+      padding: 12px;
+      border-radius: 0 0 3px 3px;
+    }
+    .widget-body ul { list-style: none; }
+    .widget-body ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid #ece4d4;
+      font-size: .82rem;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+    }
+    .widget-body ul li:last-child { border-bottom: none; }
+    .widget-body ul li a { color: #4a7c24; }
+    .widget-body ul li a:hover { color: #2e5010; }
+    .widget-body ul li .date {
+      display: block;
+      font-size: .7rem;
+      color: #aaa;
+      margin-top: 1px;
+    }
+
+    /* Newsletter form */
+    .newsletter-form input[type="email"] {
+      width: 100%;
+      padding: 7px 9px;
+      border: 1px solid #c0b090;
+      border-radius: 3px;
+      font-size: .82rem;
+      margin-bottom: 7px;
+      font-family: Arial, sans-serif;
+    }
+    .newsletter-form button {
+      width: 100%;
+      padding: 7px;
+      background: #5a7a2e;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: .82rem;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: background .2s;
+    }
+    .newsletter-form button:hover { background: #3d5a1a; }
+
+    /* Visitor counter */
+    .counter-box {
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #d8ccb8;
+      border-radius: 3px;
+    }
+    .counter-box .count {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #4a7c24;
+      font-family: "Courier New", monospace;
+      letter-spacing: .1em;
+    }
+    .counter-box p { font-size: .75rem; color: #888; font-family: Arial, sans-serif; }
+
+    /* ── Events section ── */
+    .event-badge {
+      display: inline-block;
+      background: #c85a2a;
+      color: #fff;
+      font-size: .7rem;
+      font-family: Arial, sans-serif;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .event-date-pill {
+      display: inline-block;
+      background: #e8f0d0;
+      border: 1px solid #a8c078;
+      color: #3a5818;
+      font-size: .72rem;
+      font-family: Arial, sans-serif;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    /* ── Section titles ── */
+    .section-divider {
+      font-family: Arial, sans-serif;
+      font-size: .8rem;
+      font-weight: bold;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      border-bottom: 2px solid #c8d8a0;
+      padding-bottom: 5px;
+      margin: 30px 0 18px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #2e5c1a;
+      color: #c8dfa0;
+      text-align: center;
+      padding: 18px 30px;
+      font-family: Arial, sans-serif;
+      font-size: .78rem;
+    }
+    footer a { color: #a8d070; }
+    footer a:hover { color: #fff; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    footer .footer-links a {
+      border-right: 1px solid rgba(255,255,255,.3);
+      padding-right: 18px;
+    }
+    footer .footer-links a:last-child { border-right: none; padding-right: 0; }
+
+    /* ── Mobile nav toggle ── */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      flex-shrink: 0;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #f0f7e8;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    #site-nav.open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #site-nav.open .menu-toggle span:nth-child(2) { opacity: 0; }
+    #site-nav.open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .page-body { flex-direction: column; }
+      .sidebar { width: 100%; border-top: 2px solid #d8ccb8; }
+      .banner { height: 160px; }
+
+      /* Nav mobile */
+      #site-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .menu-toggle { display: flex; }
+      #site-nav > ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: nowrap;
+      }
+      #site-nav.open > ul { display: flex; }
+      #site-nav > ul > li { width: 100%; }
+      #site-nav > ul > li > a {
+        padding: 12px 16px;
+        font-size: .82rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      /* Les sous-menus sont masqués sur mobile (hover ne fonctionne pas) */
+      #site-nav .dropdown { display: none !important; }
+
+      /* Masque le chevron ▾ sur mobile */
+      #site-nav > ul > li > a::after { content: none; }
+
+      header { padding: 14px 16px; gap: 12px; }
+      .logo-circle { width: 60px; height: 60px; }
+      .logo-circle svg { width: 44px; height: 44px; }
+      .site-title h1 { font-size: 1.5rem; }
+      .site-title p { font-size: .78rem; }
+
+      .main-content { padding: 18px 16px; }
+      .sidebar { padding: 16px; }
+
+      .article-card .thumb { float: none; margin: 0 0 12px; width: 100%; height: 120px; }
+    }
+
+    @media (max-width: 420px) {
+      .banner-caption h2 { font-size: 1.1rem; }
+      .banner { height: 130px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-circle">
+      <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simple rose + leaf illustration -->
+        <circle cx="29" cy="20" r="10" fill="#e8506a" opacity=".9"/>
+        <circle cx="29" cy="20" r="6"  fill="#f07888"/>
+        <circle cx="29" cy="20" r="3"  fill="#ffb0b8"/>
+        <!-- petals -->
+        <ellipse cx="29" cy="10" rx="4" ry="6" fill="#e8506a" opacity=".7"/>
+        <ellipse cx="39" cy="17" rx="6" ry="4" fill="#e8506a" opacity=".7" transform="rotate(30 39 17)"/>
+        <ellipse cx="35" cy="29" rx="5" ry="6" fill="#e8506a" opacity=".7" transform="rotate(15 35 29)"/>
+        <ellipse cx="22" cy="29" rx="5" ry="6" fill="#e8506a" opacity=".7" transform="rotate(-15 22 29)"/>
+        <ellipse cx="19" cy="17" rx="6" ry="4" fill="#e8506a" opacity=".7" transform="rotate(-30 19 17)"/>
+        <!-- stem -->
+        <path d="M29 30 Q26 40 24 50" stroke="#4a8c2a" stroke-width="2" fill="none"/>
+        <!-- leaves -->
+        <ellipse cx="22" cy="40" rx="8" ry="4" fill="#5aa030" transform="rotate(-30 22 40)"/>
+        <ellipse cx="28" cy="46" rx="7" ry="3.5" fill="#4a8c2a" transform="rotate(20 28 46)"/>
+      </svg>
+    </div>
+    <div class="site-title">
+      <h1>L'Herbe Folle</h1>
+      <p>La passion des jardins champêtres et des roses anciennes – Alsace du Nord</p>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav id="site-nav">
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="document.getElementById('site-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li class="active"><a href="#">Accueil</a></li>
+      <li>
+        <a href="#">Qui sommes-nous ? ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Présentation de l'association</a></li>
+          <li><a href="#">Nos activités</a></li>
+          <li><a href="#">Nous rejoindre</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Visite des jardins ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Jardin de Marie-Claire</a></li>
+          <li><a href="#">Jardin des Pivoines</a></li>
+          <li><a href="#">Jardin d'Alsace</a></li>
+          <li><a href="#">Jardin aux Mille Roses</a></li>
+          <li><a href="#">Jardin du Moulin</a></li>
+          <li><a href="#">Jardin de Simone</a></li>
+          <li><a href="#">Jardin des Abeilles</a></li>
+          <li><a href="#">Jardin Sauvage</a></li>
+          <li><a href="#">Jardin de la Cure</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Bourse aux plantes ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Programme de la journée</a></li>
+          <li><a href="#">Le coin des collectionneurs</a></li>
+          <li><a href="#">Exposants et partenaires</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Autres activités ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Ateliers jardinage</a></li>
+          <li><a href="#">Conférences botaniques</a></li>
+          <li><a href="#">Sorties découverte</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Nos coups de cœur ▾</a>
+        <ul class="dropdown">
+          <li><a href="#">Sites recommandés</a></li>
+          <li><a href="#">Événements à ne pas manquer</a></li>
+          <li><a href="#">Lectures & ressources</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Privé</a></li>
+    </ul>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-caption">
+      <h2>Bienvenue dans nos jardins champêtres</h2>
+      <p>Griesbach-Gundershoffen · Alsace du Nord</p>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page-body">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="#">Accueil</a>
+      </div>
+
+      <!-- Article 1 -->
+      <div class="article-card clearfix">
+        <div class="thumb">
+          <div class="thumb-img">🌳</div>
+        </div>
+        <h3>Les jardins partagés de la Breitmatt</h3>
+        <div class="meta">Publié le 12 avril 2026 · Actualités</div>
+        <span class="event-badge">Nouveau</span>
+        <p>
+          Notre association a récemment participé à l'inauguration des jardins partagés
+          de la Breitmatt à Gundershoffen. Ce projet communautaire réunit une dizaine de
+          familles autour d'un espace de culture potagère et florale, dans l'esprit qui
+          anime L'Herbe Folle depuis sa création.
+        </p>
+        <a href="#" class="read-more">Lire la suite »</a>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="article-card clearfix">
+        <div class="thumb">
+          <div class="thumb-img">🌹</div>
+        </div>
+        <h3>Bourse aux plantes 2026 – Appel aux exposants</h3>
+        <div class="meta">Publié le 3 avril 2026 · Événements</div>
+        <span class="event-date-pill">📅 15 mai 2026</span>
+        <p>
+          La Bourse aux plantes annuelle approche ! Cette année encore, nous accueillerons
+          passionnés et collectionneurs pour échanger semences, bulbes, vivaces et roses
+          anciennes. Les inscriptions exposants sont ouvertes jusqu'au 30 avril. Venez
+          partager votre passion et découvrir de nouvelles variétés rares.
+        </p>
+        <a href="#" class="read-more">Lire la suite »</a>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="article-card clearfix">
+        <div class="thumb">
+          <div class="thumb-img">🐝</div>
+        </div>
+        <h3>Jardins de roses, d'abeilles et de groseilles – Compte rendu</h3>
+        <div class="meta">Publié le 20 mars 2026 · Activités</div>
+        <p>
+          La journée dédiée aux roses patrimoniales, à l'apiculture de jardin et à la
+          culture des groseilliers a réuni près de soixante participants à Griesbach.
+          Les échanges autour de la préservation des variétés anciennes étaient au cœur
+          des discussions, avec des démonstrations de taille et de bouturage.
+        </p>
+        <a href="#" class="read-more">Lire la suite »</a>
+      </div>
+
+      <div class="section-divider">Prochains événements</div>
+
+      <div class="article-card">
+        <span class="event-badge">Atelier</span>
+        <span class="event-date-pill">📅 2 mai 2026</span>
+        <h3>Atelier bouturage des roses anciennes</h3>
+        <p>
+          Apprenez les techniques traditionnelles de bouturage pour multiplier vos
+          rosiers anciens et en préserver les variétés patrimoniales.
+          Inscription requise – nombre de places limité.
+        </p>
+        <a href="#" class="read-more">S'inscrire »</a>
+      </div>
+
+      <div class="article-card">
+        <span class="event-badge">Visite</span>
+        <span class="event-date-pill">📅 22 juin 2026</span>
+        <h3>Journée portes ouvertes – Visite des jardins membres</h3>
+        <p>
+          Neuf jardins ouvriront exceptionnellement leurs portes au public lors de
+          cette journée festive. Balade libre entre les propriétés avec livret de
+          découverte offert à chaque visiteur.
+        </p>
+        <a href="#" class="read-more">En savoir plus »</a>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Compteur -->
+      <div class="widget">
+        <div class="counter-box">
+          <div class="count">10 872</div>
+          <p>visiteurs depuis l'ouverture</p>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="widget">
+        <div class="widget-title">Newsletter</div>
+        <div class="widget-body">
+          <p style="font-size:.8rem; margin-bottom:9px; color:#555; font-family:Arial,sans-serif;">
+            Recevez nos actualités jardin directement dans votre boîte mail.
+          </p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Votre adresse e-mail" />
+            <button type="submit">Je m'inscris</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dernières nouvelles -->
+      <div class="widget">
+        <div class="widget-title">Dernières nouvelles</div>
+        <div class="widget-body">
+          <ul>
+            <li>
+              <a href="#">Compte rendu AG 2026</a>
+              <span class="date">18 avril 2026</span>
+            </li>
+            <li>
+              <a href="#">Nouvelles acquisitions – rosiers anciens</a>
+              <span class="date">5 avril 2026</span>
+            </li>
+            <li>
+              <a href="#">Partenariat avec la médiathèque de Haguenau</a>
+              <span class="date">28 mars 2026</span>
+            </li>
+            <li>
+              <a href="#">Résultats concours photo printemps</a>
+              <span class="date">14 mars 2026</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Liens rapides -->
+      <div class="widget">
+        <div class="widget-title">Liens rapides</div>
+        <div class="widget-body">
+          <ul>
+            <li><a href="#">Adhérer à l'association</a></li>
+            <li><a href="#">Télécharger le programme</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li><a href="#">Galerie photos</a></li>
+            <li><a href="#">Flux RSS</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Partenaires -->
+      <div class="widget">
+        <div class="widget-title">Partenaires</div>
+        <div class="widget-body" style="font-size:.78rem; font-family:Arial,sans-serif; color:#666; line-height:1.6;">
+          <p>🌿 Commune de Griesbach</p>
+          <p>🌿 Commune de Gundershoffen</p>
+          <p>🌿 CAUE du Bas-Rhin</p>
+          <p>🌿 Jardins d'Alsace</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Accueil</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">Plan du site</a>
+      <a href="#">Flux RSS</a>
+      <a href="#">Administration</a>
+    </div>
+    <p>© 2026 Association L'Herbe Folle – Griesbach-Gundershoffen, Alsace du Nord</p>
+    <p style="margin-top:5px; opacity:.7;">Site réalisé avec asso-web</p>
+  </footer>
+
+</div>
+</body>
+</html>

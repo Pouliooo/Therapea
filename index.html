@@ -6,7 +6,7 @@
   <title>Therapēa – Ateliers de créativité végétale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,10 +15,11 @@
   <header class="navbar">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__logo">
-        <img src="images/logo blanc.png" alt="Therapēa" style="height:42px;" />
+        <img src="images/LOGO/logo typo beige-19.png" alt="Therapēa" class="navbar__logo-img navbar__logo-img--default" />
+        <img src="images/LOGO/logo typo vert-08.png" alt="Therapēa" class="navbar__logo-img navbar__logo-img--scrolled" />
       </a>
       <nav class="navbar__links">
-        <a href="index.html">HOME</a>
+        <a href="index.html" class="active">HOME</a>
         <a href="notre-histoire.html">NOTRE HISTOIRE</a>
         <a href="ateliers.html">LES ATELIERS</a>
         <a href="professionnels.html">PROFESSIONNELS</a>
@@ -31,108 +32,147 @@
   </header>
 
   <!-- ───────── HERO ───────── -->
-  <section class="hero">
+  <section class="hero hero--home">
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <div class="hero__badge">
-        <img src="images/logo blanc.png" alt="Therapēa – ateliers de créativité végétale" />
-      </div>
-      <h1 class="hero__title">Faites de votre créativité<br />une thérapie</h1>
+    <div class="hero__content animate">
+      <img src="images/LOGO/logo beige-22.png" alt="Therapēa" class="hero__logo" />
+      <h1 class="hero__title">Faites de votre créativité<em>une thérapie</em></h1>
       <p class="hero__sub">Révélez-vous au travers d'une activité manuelle</p>
-    </div>
-    <div class="hero__wave">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#2e5339"/>
-      </svg>
+      <a href="#ateliers" class="btn-cta">Voir nos produits →</a>
     </div>
   </section>
 
-  <!-- ───────── ATELIERS – SECTION VERTE ───────── -->
-  <section class="ateliers-green">
-    <div class="container">
-      <div class="cards-row animate">
+  <!-- ───────── BARRE D'ATOUTS ───────── -->
+  <div class="stats-bar-wrap">
+    <div class="stats-bar animate">
 
-        <article class="card-circle">
-          <div class="card-circle__img-wrap">
-            <img src="images/img1.jpg" alt="Portrait Chinois" />
-          </div>
-          <h3>PORTRAIT CHINOIS</h3>
-          <p>Réalisez avec les végétaux et accessoires à disposition une composition qui prend en compte les éléments du portrait chinois (couleur, forme, texture, odeur...).</p>
-          <a href="/ateliers/portrait-chinois" class="link-discover">Découvrir →</a>
-        </article>
-
-        <article class="card-circle">
-          <div class="card-circle__img-wrap">
-            <img src="images/img2.jpg" alt="Couronne de Fleurs" />
-          </div>
-          <h3>COURONNE DE FLEURS</h3>
-          <p>Balade dans la nature et cueillette pour confectionner une couronne de saison 100% naturelle.</p>
-          <a href="/ateliers/couronne-de-fleurs" class="link-discover">Découvrir →</a>
-        </article>
-
-        <article class="card-circle">
-          <div class="card-circle__img-wrap">
-            <img src="images/img3.jpg" alt="Jardin d'Intérieur" />
-          </div>
-          <h3>JARDIN D'INTÉRIEUR</h3>
-          <p>Créer son jardin d'intérieur en se mettant au contact de la terre, en prenant le temps de ressentir les textures et en faisant place à sa créativité.</p>
-          <a href="/ateliers/jardin-interieur" class="link-discover">Découvrir →</a>
-        </article>
-
+      <div class="stats-bar__item">
+        <div class="stats-bar__icon">
+          <svg viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M221.45,40.19a6,6,0,0,0-5.64-5.64C140.43,30.11,80.14,52.71,54.53,95c-17.44,28.79-16.76,62.8,1.79,96.2L35.76,211.76a6,6,0,1,0,8.48,8.48L64.8,199.68c17.27,9.59,34.7,14.41,51.49,14.41A85.38,85.38,0,0,0,161,201.47C203.29,175.86,225.88,115.57,221.45,40.19Zm-66.66,151c-24.08,14.58-52.64,14.37-81.13-.39l90.59-90.59a6,6,0,0,0-8.48-8.48L65.18,182.34c-14.76-28.49-15-57-.39-81.13,22.68-37.43,76.63-57.8,145-54.95C212.59,114.58,192.22,168.54,154.79,191.21Z"/>
+          </svg>
+        </div>
+        <div class="stats-bar__text">
+          <h3>Créativité &amp; bien-être</h3>
+          <p>Stimulez votre imagination et apaisez votre esprit.</p>
+        </div>
       </div>
-    </div>
-    <div class="green-wave-bottom">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 C360,0 1080,120 1440,60 L1440,120 L0,120 Z" fill="#f5f0e8"/>
-      </svg>
-    </div>
-  </section>
 
-  <!-- ───────── ATELIERS – SECTION CRÈME ───────── -->
-  <section class="ateliers-cream">
-    <div class="container">
-      <div class="ateliers-cream__header animate">
-        <span class="section-eyebrow">Ce que nous proposons</span>
-        <h2>Tous nos ateliers</h2>
+      <div class="stats-bar__item">
+        <div class="stats-bar__icon">
+          <svg viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M229.12,142.65a22.43,22.43,0,0,0-19.55-3.88l-4.32,1C227,119.55,238,99.51,238,80c0-25.36-20.39-46-45.46-46A45.51,45.51,0,0,0,156,52a45.51,45.51,0,0,0-36.54-18C94.39,34,74,54.64,74,80c0,11.38,3.63,22.49,11.29,34.36a29.73,29.73,0,0,0-16.56,8.43L45.52,146H16A14,14,0,0,0,2,160v40a14,14,0,0,0,14,14H120a6,6,0,0,0,1.46-.18l64-16a7.16,7.16,0,0,0,.89-.3L225.17,181l.33-.15a22.6,22.6,0,0,0,3.62-38.18ZM119.46,46a33.16,33.16,0,0,1,31,20.28,6,6,0,0,0,11.1,0,33.16,33.16,0,0,1,31-20.28C210.68,46,226,61.57,226,80c0,20.24-16.18,43-46.8,65.75l-14.87,3.42A26,26,0,0,0,140,114H99.67C90.36,101.67,86,90.81,86,80,86,61.57,101.32,46,119.46,46ZM14,200V160a2,2,0,0,1,2-2H42v44H16A2,2,0,0,1,14,200Zm206.28-30-38.2,16.27L119.26,202H54V154.49l23.21-23.22A17.88,17.88,0,0,1,89.94,126H140a14,14,0,0,1,0,28H112a6,6,0,0,0,0,12h32a6,6,0,0,0,1.34-.15l67-15.41.24-.06A10.6,10.6,0,0,1,220.28,170Z"/>
+          </svg>
+        </div>
+        <div class="stats-bar__text">
+          <h3>Activité manuelle</h3>
+          <p>Des ateliers accessibles à tous, sans prérequis.</p>
+        </div>
       </div>
-      <div class="cards-grid">
 
-        <article class="card-workshop animate">
-          <a href="atelier-portrait-chinois.html">
-            <div class="card-workshop__img-wrap">
-              <img src="images/img1.jpg" alt="Portrait Chinois Végétal"
-                   onerror="this.src='https://picsum.photos/id/152/400/500'" />
-            </div>
-          </a>
-          <h3>PORTRAIT CHINOIS VÉGÉTAL</h3>
-          <p>Une composition végétale qui vous ressemble — couleurs, formes, textures, odeurs.</p>
-          <a href="atelier-portrait-chinois.html" class="link-discover dark">Découvrir →</a>
-        </article>
-
-        <article class="card-workshop animate animate--delay-1">
-          <a href="atelier-autoportrait-floral.html">
-            <div class="card-workshop__img-wrap">
-              <img src="images/fond.jpg" alt="Autoportrait Floral"
-                   onerror="this.src='https://picsum.photos/id/164/400/500'" />
-            </div>
-          </a>
-          <h3>AUTOPORTRAIT FLORAL</h3>
-          <p>Un bouquet miroir de vous-même, créé à partir d'un travail introspectif guidé.</p>
-          <a href="atelier-autoportrait-floral.html" class="link-discover dark">Découvrir →</a>
-        </article>
-
+      <div class="stats-bar__item">
+        <div class="stats-bar__icon">
+          <svg viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M243.6,148.8a6,6,0,0,1-8.4-1.2A53.58,53.58,0,0,0,192,126a6,6,0,0,1,0-12,26,26,0,1,0-25.18-32.5,6,6,0,0,1-11.62-3,38,38,0,1,1,59.91,39.63A65.69,65.69,0,0,1,244.8,140.4,6,6,0,0,1,243.6,148.8ZM189.19,213a6,6,0,0,1-2.19,8.2,5.9,5.9,0,0,1-3,.81,6,6,0,0,1-5.2-3,59,59,0,0,0-101.62,0,6,6,0,1,1-10.38-6A70.1,70.1,0,0,1,103,182.55a46,46,0,1,1,50.1,0A70.1,70.1,0,0,1,189.19,213ZM128,178a34,34,0,1,0-34-34A34,34,0,0,0,128,178ZM70,120a6,6,0,0,0-6-6A26,26,0,1,1,89.18,81.49a6,6,0,1,0,11.62-3,38,38,0,1,0-59.91,39.63A65.69,65.69,0,0,0,11.2,140.4a6,6,0,1,0,9.6,7.2A53.58,53.58,0,0,1,64,126,6,6,0,0,0,70,120Z"/>
+          </svg>
+        </div>
+        <div class="stats-bar__text">
+          <h3>Moments de partage</h3>
+          <p>Vivez une expérience conviviale et inspirante.</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <div class="wave-sep wave-cream-to-green">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#2e5339"/>
-    </svg>
+      <div class="stats-bar__item">
+        <div class="stats-bar__icon">
+          <svg viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M245.63,48A6,6,0,0,0,240,42.37c-51-3-91.88,12.42-109.35,41.26-11.63,19.21-11.38,42.68.53,65a69.42,69.42,0,0,0-15.48,30.59L95.9,159.41c8.15-16.1,8.1-32.95-.32-46.85C82.77,91.41,53,80.07,15.9,82.27a6,6,0,0,0-5.63,5.64C8.09,125,19.41,154.77,40.56,167.58A43.75,43.75,0,0,0,63.44,174a53.17,53.17,0,0,0,24-6L114,194.48V224a6,6,0,0,0,12,0V194.51A57.55,57.55,0,0,1,139.76,157c11.21,5.93,22.72,8.91,33.82,8.91a58.9,58.9,0,0,0,30.79-8.57C233.21,139.89,248.63,99,245.63,48ZM46.78,157.31C30.47,147.44,21.39,124,22,94c30-.65,53.41,8.44,63.28,24.75,5.68,9.37,6.16,20.38,1.54,31.59L60.24,123.75a6,6,0,0,0-8.49,8.49l26.62,26.61C67.16,163.47,56.15,163,46.78,157.31Zm151.38-10.22c-14.74,8.92-32.14,9.18-49.67.9l55.76-55.75a6,6,0,0,0-8.49-8.49L140,139.51c-8.28-17.53-8-34.93.9-49.66,14.52-24,49.06-37.18,93-35.75C235.33,98,222.14,132.56,198.16,147.09Z"/>
+          </svg>
+        </div>
+        <div class="stats-bar__text">
+          <h3>Produits de qualité</h3>
+          <p>Des matériaux sélectionnés avec soin et passion.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- ───────── LES ATELIERS ───────── -->
+  <section class="ateliers-teaser" id="ateliers">
+    <div class="container ateliers-teaser__grid">
+
+      <div class="ateliers-teaser__text animate">
+        <span class="section-eyebrow">Les ateliers</span>
+        <h2>Des ateliers pour<br /><em>se reconnecter</em></h2>
+        <p>Nos ateliers vous permettent de créer, d'apprendre et de vous recentrer dans un cadre chaleureux et bienveillant.</p>
+        <a href="ateliers.html" class="btn-primary-green">Découvrir les ateliers →</a>
+      </div>
+
+      <div class="ateliers-teaser__cards">
+
+        <a href="atelier-couronne-fleurs.html" class="teaser-card animate">
+          <div class="teaser-card__img">
+            <img src="images/atelier-couronne-fleurs.jpg" alt="Couronne de Fleurs Séchées" />
+          </div>
+          <div class="teaser-card__label">
+            <div>
+              <h3>Couronne de Fleurs</h3>
+              <span>Atelier bien-être</span>
+            </div>
+            <span class="teaser-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a href="atelier-jardin-interieur.html" class="teaser-card animate animate--delay-1">
+          <div class="teaser-card__img">
+            <img src="images/atelier-jardin-interieur.jpg" alt="Jardin d'Intérieur" />
+          </div>
+          <div class="teaser-card__label">
+            <div>
+              <h3>Jardin d'Intérieur</h3>
+              <span>Atelier bien-être</span>
+            </div>
+            <span class="teaser-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a href="atelier-autoportrait-floral.html" class="teaser-card animate animate--delay-2">
+          <div class="teaser-card__img">
+            <img src="images/atelier-autoportrait-floral.jpg" alt="Autoportrait Floral" />
+          </div>
+          <div class="teaser-card__label">
+            <div>
+              <h3>Autoportrait Floral</h3>
+              <span>Atelier introspectif</span>
+            </div>
+            <span class="teaser-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a href="atelier-portrait-chinois.html" class="teaser-card animate animate--delay-3">
+          <div class="teaser-card__img">
+            <img src="images/atelier-portrait-chinois.jpg" alt="Portrait Chinois Végétal" />
+          </div>
+          <div class="teaser-card__label">
+            <div>
+              <h3>Portrait Chinois</h3>
+              <span>Atelier introspectif</span>
+            </div>
+            <span class="teaser-card__arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ───────── CTA ───────── -->
   <section class="cta-section">
+    <div class="cta-section__dip">
+      <svg viewBox="0 0 1440 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,0 Q720,24 0,0 Z" fill="#f5f0e8"/>
+      </svg>
+    </div>
     <div class="cta-section__inner animate">
       <span class="cta-eyebrow">Envie de vous reconnecter ?</span>
       <h2>Venez vivre l'expérience Therapēa</h2>
@@ -140,17 +180,11 @@
     </div>
   </section>
 
-  <div class="wave-sep wave-green-to-cream">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#f5f0e8"/>
-    </svg>
-  </div>
-
   <!-- ───────── À PROPOS TEASER ───────── -->
   <section class="apropos-wrap">
   <div class="apropos animate">
     <div class="apropos__img">
-      <img src="images/home.jpg" alt="Therapēa" />
+      <img src="images/notre-histoire-teaser.jpg" alt="Therapēa" />
     </div>
     <div class="apropos__text">
       <span class="section-eyebrow">Notre histoire</span>
@@ -162,10 +196,10 @@
   </section>
 
   <!-- ───────── FOOTER ───────── -->
-  <footer class="footer">
-    <div class="footer__wave">
-      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#2e5339"/>
+  <footer class="footer footer--home">
+    <div class="footer__dip">
+      <svg viewBox="0 0 1440 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1440,0 Q720,24 0,0 Z" fill="#f5f0e8"/>
       </svg>
     </div>
     <div class="footer__inner">

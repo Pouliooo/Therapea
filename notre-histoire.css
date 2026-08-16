@@ -1,7 +1,7 @@
 /* ── PRÉSENTATION ── */
 .presentation {
   background: var(--cream);
-  margin-top: 72px;
+  margin-top: 92px;
   padding: 5rem 5%;
 }
 
@@ -263,10 +263,17 @@
   .avis { padding: 4rem 0 5rem; }
   .realisations { padding: 3rem 0 5rem; }
   .presentation__text h2 { font-size: 2rem; }
+  .avis__header h2 { font-size: 1.8rem; }
 }
 
 @media (max-width: 480px) {
   .presentation { padding: 3rem 5%; }
   .realisations__grid { grid-template-columns: repeat(2, 1fr); }
   .avis__card { padding: 1.6rem 1.4rem; }
+  .presentation__text h2 { font-size: 1.7rem; }
+  .avis__quote { font-size: 0.9rem; }
+}
+
+@media (max-width: 380px) {
+  .realisations__grid { grid-template-columns: 1fr; }
 }

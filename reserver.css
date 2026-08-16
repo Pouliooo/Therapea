@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 72px;
+  margin-top: 92px;
 }
 
 .reserver-hero__overlay {
@@ -307,6 +307,20 @@
   .reserver-layout { grid-template-columns: 1fr; gap: 3rem; }
 }
 
+@media (max-width: 768px) {
+  .reserver-form-section { padding: 3rem 5%; }
+  /* Prévient le zoom automatique sur iOS lors du focus d'un champ */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+  }
+  .btn-submit { width: 100%; text-align: center; }
+}
+
 @media (max-width: 500px) {
   .form-row { grid-template-columns: 1fr; }
+  .radio-group { grid-template-columns: 1fr; }
+  .reserver-hero__content h1 { font-size: 2rem; }
+  .reserver-hero__content p { font-size: 0.9rem; }
 }
