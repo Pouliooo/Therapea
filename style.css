@@ -197,15 +197,14 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
+  min-height: 60vh;
   background: url('images/fond.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: #3a5c3a;
-  padding-top: 92px;
+  padding: 92px 1rem 3rem;
 }
 
 .hero--home {
@@ -834,6 +833,16 @@ img { display: block; max-width: 100%; }
   .stats-bar { flex-wrap: wrap; gap: 1.6rem 0; }
   .stats-bar__item { flex: 1 1 50%; padding: 0 1rem; }
   .stats-bar__item:nth-child(3) { border-left: none; }
+  .hero { min-height: 56vh; }
+  .hero__logo { width: 90px; }
+  .hero__content { gap: 0.9rem; }
+}
+
+/* ── Laptop (écrans peu hauts) ── */
+@media (max-height: 760px) and (min-width: 901px) {
+  .hero { min-height: 460px; padding: 100px 1rem 2rem; }
+  .hero__logo { width: 90px; }
+  .hero__content { gap: 0.8rem; }
 }
 
 /* ── Mobile nav (tablettes + grands smartphones) ── */
@@ -887,8 +896,11 @@ img { display: block; max-width: 100%; }
 
 /* ── Small mobile ── */
 @media (max-width: 480px) {
-  .hero { height: 75vh; }
+  .hero { min-height: 68vh; padding: 92px 1rem 2.5rem; }
   .hero--home { border-radius: 0 0 50% 50% / 0 0 7px 7px; }
+  .hero__logo { width: 68px; }
+  .hero__content { gap: 0.7rem; }
+  .hero__sub { font-size: 0.9rem; }
   .ateliers-teaser__cards { grid-template-columns: 1fr; }
   .apropos__quote { font-size: 1.3rem; }
   .footer__inner { padding: 2.5rem 1rem 1.5rem; }
