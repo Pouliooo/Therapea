@@ -1,37 +1,43 @@
 /* ── HERO ── */
 .reserver-hero {
   position: relative;
-  min-height: 46vh;
+  min-height: 32vh;
+  text-align: center;
   background: url('images/fond.jpg') center 30% / cover no-repeat;
   background-color: var(--green-dark);
+  margin-top: 92px;
+  padding: 3rem 6%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  margin-top: 92px;
-  padding: 6rem 6% 3.5rem;
+  justify-content: center;
   overflow: hidden;
 }
 
 .reserver-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(20,45,25,0.6) 0%, rgba(20,45,25,0.25) 60%, rgba(20,45,25,0.15) 100%);
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(20,45,25,0.32) 0%, rgba(14,32,18,0.7) 100%);
 }
 
 .reserver-hero__content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 640px;
   color: #fff;
-  max-width: 560px;
 }
 
 .reserver-hero__content h1 {
   font-family: var(--font-title);
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
   font-weight: 500;
   font-style: normal;
-  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  color: #fff;
   text-shadow: 0 1px 2px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4);
 }
 
@@ -39,52 +45,9 @@
   font-size: 1rem;
   font-weight: 300;
   opacity: 0.95;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   line-height: 1.6;
 }
-
-.reserver-hero__perks {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.6rem;
-}
-
-.reserver-hero__perk {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.reserver-hero__perk svg {
-  width: 26px;
-  height: 26px;
-  color: #fff;
-}
-
-.reserver-hero__perk span {
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.reserver-hero__badge {
-  position: absolute;
-  top: 2rem;
-  right: 6%;
-  z-index: 2;
-}
-
-.reserver-hero__quote {
-  position: absolute;
-  top: calc(2rem + 170px);
-  right: 4%;
-  z-index: 2;
-  color: #fff;
-  text-align: right;
-}
-.reserver-hero__quote::after { filter: brightness(0) invert(1); opacity: 0.7; margin-left: auto; }
 
 /* ── LAYOUT ── */
 .reserver-form-section {
@@ -104,9 +67,10 @@
 .reserver-info h2,
 .reserver-form h2 {
   font-family: var(--font-title);
-  font-size: 1.8rem;
-  font-style: italic;
-  font-weight: 400;
+  font-size: 2.3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.15;
   color: var(--green-dark);
   margin-bottom: 2rem;
 }
@@ -199,29 +163,6 @@
   height: 14px;
   flex-shrink: 0;
 }
-
-.reserver-info__photo {
-  position: relative;
-  margin-top: 2rem;
-  border-radius: 4px 120px 4px 4px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-}
-
-.reserver-info__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.reserver-info__photo-quote {
-  position: absolute;
-  left: 1.2rem;
-  bottom: 1.2rem;
-  color: #fff;
-  text-align: left;
-}
-.reserver-info__photo-quote::after { filter: brightness(0) invert(1); opacity: 0.8; }
 
 /* ── FORMULAIRE ── */
 .reserver-form form {
@@ -400,48 +341,9 @@
   padding-bottom: 2px;
 }
 
-.reserver-form-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.reserver-blob {
-  position: absolute;
-  right: 4%;
-  bottom: 2rem;
-  width: 190px;
-  aspect-ratio: 1;
-  border-radius: 50% 50% 10% 50%;
-  background: rgba(46,83,57,0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-align: center;
-  padding: 1rem;
-}
-
-.reserver-blob span {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--green-dark);
-  line-height: 1.4;
-}
-
-.reserver-blob svg {
-  width: 18px;
-  height: 18px;
-  color: var(--green-dark);
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .reserver-layout { grid-template-columns: 1fr; gap: 3rem; }
-  .reserver-blob { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -453,15 +355,14 @@
     font-size: 16px;
   }
   .btn-submit { width: 100%; text-align: center; justify-content: center; }
-  .reserver-hero__perks { gap: 1.2rem; }
-  .reserver-hero__quote { display: none; }
 }
 
 @media (max-width: 500px) {
   .form-row { grid-template-columns: 1fr; }
   .radio-group { grid-template-columns: 1fr; }
-  .reserver-hero__content h1 { font-size: 2rem; }
+  .reserver-hero__content h1 { font-size: 1.7rem; }
   .reserver-hero__content p { font-size: 0.9rem; }
-  .reserver-hero { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 5rem 5% 3rem; }
-  .reserver-hero__badge { position: static; }
+  .reserver-hero { padding: 3.5rem 6%; }
+  .reserver-info h2, .reserver-form h2 { font-size: 1.7rem; margin-bottom: 1.4rem; }
+  .reserver-form-section { padding: 2.5rem 5%; }
 }

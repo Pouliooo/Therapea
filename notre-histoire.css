@@ -38,26 +38,6 @@
   object-position: center 20%;
 }
 
-.presentation__leaf {
-  position: absolute;
-  width: 46px;
-  height: auto;
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.presentation__leaf--1 {
-  top: -30px;
-  left: -20px;
-}
-
-.presentation__leaf--2 {
-  width: 60px;
-  bottom: -60px;
-  left: -50px;
-  opacity: 0.3;
-}
-
 .presentation__badge {
   position: absolute;
   top: -8%;
@@ -83,10 +63,6 @@
   color: #3a3a3a;
   font-weight: 300;
   max-width: 480px;
-}
-
-.presentation__quote {
-  margin-top: 0.8rem;
 }
 
 .btn-primary {
@@ -131,9 +107,10 @@
 
 .avis__header h2 {
   font-family: var(--font-title);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-style: italic;
-  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.15;
   color: var(--green-dark);
 }
 
@@ -145,7 +122,7 @@
 
 .avis__card {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 14px;
   padding: 2.2rem 2rem 1.8rem;
   display: flex;
   flex-direction: column;
@@ -156,7 +133,7 @@
 
 .avis__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 34px rgba(20,40,25,0.12);
 }
 
 .avis__card--accent {
@@ -210,6 +187,32 @@
   justify-content: space-between;
 }
 
+.avis__who {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.avis__avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--cream-dark);
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.avis__card--accent .avis__avatar {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
 .avis__stars {
   color: #c9a84c;
   font-size: 0.8rem;
@@ -220,11 +223,11 @@
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--green-dark);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .avis__card--accent .avis__author {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
 }
 
 @media (max-width: 700px) {
@@ -232,20 +235,6 @@
 }
 
 /* ── RÉALISATIONS ── */
-.section-divider {
-  display: flex;
-  justify-content: center;
-  padding: 2.5rem 0;
-  background: var(--cream-dark);
-}
-
-.section-divider span {
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--green-dark);
-  border-radius: 2px;
-}
 
 .realisations {
   position: relative;
@@ -253,17 +242,6 @@
   padding: 4rem 0 8rem;
   overflow: hidden;
 }
-
-.realisations__deco {
-  position: absolute;
-  width: 180px;
-  height: auto;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.realisations__deco--tl { top: -20px; left: -20px; }
-.realisations__deco--br { bottom: -20px; right: -20px; }
 
 .realisations__header {
   display: flex;
@@ -368,7 +346,7 @@
 @media (max-width: 900px) {
   .presentation__inner { grid-template-columns: 1fr; }
   .presentation__img { aspect-ratio: 16 / 9; max-height: 400px; border-radius: 24px; }
-  .presentation__badge { width: 130px; top: -16px; right: -16px; }
+  .presentation__badge { width: 130px; height: 130px; top: -14px; right: -14px; }
   .avis__grid { grid-template-columns: repeat(2, 1fr); }
   .realisations__grid { grid-template-columns: repeat(2, 1fr); }
   .presentation { padding: 4rem 5%; }
@@ -381,20 +359,15 @@
   .realisations { padding: 3rem 0 5rem; }
   .presentation__text h2 { font-size: 2rem; }
   .avis__header h2 { font-size: 1.8rem; }
-  .realisations__deco { width: 70px; height: 70px; }
 }
 
 @media (max-width: 480px) {
   .presentation { padding: 3rem 5%; }
-  .realisations__grid { grid-template-columns: repeat(2, 1fr); }
+  .realisations__grid { grid-template-columns: 1fr; }
   .avis__card { padding: 1.6rem 1.4rem; }
   .presentation__text h2 { font-size: 1.7rem; }
   .avis__quote { font-size: 0.9rem; }
-  .presentation__badge { width: 110px; top: -12px; right: -12px; }
+  .presentation__badge { width: 100px; height: 100px; top: -10px; right: -10px; }
   .presentation__badge span { font-size: 0.6rem; }
   .filter-pill { font-size: 0.7rem; padding: 0.45rem 0.9rem; }
-}
-
-@media (max-width: 380px) {
-  .realisations__grid { grid-template-columns: 1fr; }
 }

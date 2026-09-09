@@ -192,9 +192,6 @@
   .atelier-meta { position: static; }
   .atelier-gallery { grid-template-columns: repeat(2, 1fr); }
   .atelier-content { padding: 4rem 5%; }
-}
-
-@media (max-width: 768px) {
   .atelier-hero__title { white-space: normal; }
 }
 

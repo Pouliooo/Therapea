@@ -27,6 +27,16 @@ window.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => { document.body.style.opacity = '1'; });
 });
 
+// Restaure l'affichage quand la page revient du cache du navigateur
+// (bouton précédent/suivant) : sans ça, DOMContentLoaded ne se redéclenche
+// pas et la page reste invisible (opacity resté à 0 depuis la sortie).
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    document.body.style.transition = 'none';
+    document.body.style.opacity = '1';
+  }
+});
+
 document.addEventListener('click', e => {
   const link = e.target.closest('a[href]');
   if (!link) return;

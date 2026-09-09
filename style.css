@@ -119,38 +119,10 @@ img { display: block; max-width: 100%; }
   color: var(--text-light);
 }
 
-.navbar__right {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
 .navbar__links {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.navbar__tagline {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-light);
-  opacity: 0.85;
-}
-
-.navbar__tagline svg,
-.navbar__tagline img {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.navbar__tagline span {
-  font-family: 'Caveat', cursive;
-  font-size: 1.05rem;
-  line-height: 1.15;
-  font-weight: 600;
 }
 
 .navbar__links a {
@@ -522,41 +494,6 @@ img { display: block; max-width: 100%; }
 }
 
 /* ─────────────────────────────────────────
-   CITATION MANUSCRITE
-───────────────────────────────────────── */
-.handwritten-quote {
-  font-family: 'Caveat', cursive;
-  font-size: 1.55rem;
-  font-weight: 600;
-  color: var(--green-dark);
-  line-height: 1.25;
-  display: inline-block;
-}
-
-.handwritten-quote::after {
-  content: '';
-  display: block;
-  width: 80%;
-  height: 8px;
-  margin-top: 2px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0,5 Q10,0 20,5 T40,5 T60,5 T80,5 T100,5' fill='none' stroke='%232e5339' stroke-width='2'/%3E%3C/svg%3E") no-repeat;
-  background-size: 100% 100%;
-  opacity: 0.6;
-}
-
-.handwritten-quote--inline {
-  margin-top: 1rem;
-}
-
-.handwritten-quote--float {
-  position: absolute;
-  right: 5%;
-  bottom: 1.5rem;
-  text-align: right;
-  z-index: 2;
-}
-
-/* ─────────────────────────────────────────
    BADGE CIRCULAIRE
 ───────────────────────────────────────── */
 .badge-circle {
@@ -773,7 +710,11 @@ img { display: block; max-width: 100%; }
   margin-bottom: 1rem;
 }
 
-.footer__logo img { height: 60px; }
+.footer__logo-img {
+  height: 110px;
+  width: auto;
+  filter: brightness(1.3);
+}
 
 .footer__logo-text {
   font-family: var(--font-serif);
@@ -786,6 +727,28 @@ img { display: block; max-width: 100%; }
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   opacity: 0.75;
+}
+
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-top: 0.7rem;
+  color: var(--text-light);
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.footer__social svg {
+  width: 28px;
+  height: 28px;
+}
+
+.footer__social:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .footer__copy {
@@ -911,7 +874,6 @@ img { display: block; max-width: 100%; }
 @media (max-width: 1100px) {
   .ateliers-teaser__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .ateliers-teaser__text p { max-width: 100%; }
-  .navbar__tagline { display: none; }
 }
 
 /* ── Tablet ── */
@@ -937,7 +899,6 @@ img { display: block; max-width: 100%; }
 /* ── Mobile nav (tablettes + grands smartphones) ── */
 @media (max-width: 860px) {
   .navbar__links { display: none; }
-  .navbar__tagline { display: none; }
   .navbar__burger { display: flex; }
 
   .navbar__links.open {
@@ -954,14 +915,23 @@ img { display: block; max-width: 100%; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
   }
 
-  .navbar__links.open a {
+  .navbar__links.open a,
+  .navbar.scrolled .navbar__links.open a {
     font-size: 0.88rem;
     letter-spacing: 0.14em;
+    color: var(--text-light);
   }
 
   .navbar__links.open .btn-nav {
     padding: 0.65rem 2rem;
     font-size: 0.8rem;
+  }
+
+  .navbar.scrolled .navbar__links.open {
+    top: 76px;
+    left: 4%;
+    right: 4%;
+    border-radius: 0 0 14px 14px;
   }
 }
 
@@ -994,6 +964,7 @@ img { display: block; max-width: 100%; }
   .ateliers-teaser__cards { grid-template-columns: 1fr; }
   .apropos__quote { font-size: 1.3rem; }
   .footer__inner { padding: 2.5rem 1rem 1.5rem; }
+  .footer__logo-img { height: 100px; }
   .cta-section__inner h2 { font-size: 2rem; }
   .stats-bar-wrap { margin-top: -40px; padding: 0 4%; }
 }
